@@ -8,4 +8,4 @@ Load index.html in a browser.
 * npm
 
 ### Installation
-1. Run npm install --only=dev
+1. Run npm install --only=dev on root directory
