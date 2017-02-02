@@ -1,0 +1,12 @@
+{
+  "name": "dt_test",
+  "email": "ropotan@gmail.com",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "jasmine": "^2.5.3",
+    "karma": "^1.4.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-spec-reporter": "0.0.26"
+  }
+}
