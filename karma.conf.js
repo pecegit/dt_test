@@ -5,6 +5,7 @@ module.exports = function(config) {
         browsers: ['PhantomJS'],
         files: [
             'js/jquery.min.3.1.1.js',
+            'js/_deals.js',
             'tests/**/*.js'
         ]
     });
