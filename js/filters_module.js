@@ -5,6 +5,11 @@ var filtersModule = (function () {
     function init() {
         _typeFilterControls = $('input[name=types_filter]').change(onChange);
         _speedFilterControl = $('#speed_filter').change(onChange);
+
+        $('#hamburger').on('click touch',function() {
+            console.log('asd');
+            $('#filters').toggle();
+        })
     }
 
     function onChange() {

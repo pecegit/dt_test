@@ -26,6 +26,7 @@ td, th {
     display: none;
     background: url(../images/burgermenu.svg) no-repeat scroll 0 0 transparent;
     background-position: center;
+    z-index: 100;
 }
 
 .inner_content {
@@ -56,6 +57,7 @@ td, th {
         top: 0;
         background-color: #333;
         color: #cccccc;
+        display: none;
     }
 }
 
