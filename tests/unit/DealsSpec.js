@@ -81,7 +81,7 @@ describe("Deals module", function() {
         expect(deals.length).toBe(0);
     });
 
-    it("When filtering by Broadband, Mobile and TV AND Mobile Data 2GB show 1 matching deal", function() {
+    it("When filtering by Broadband, Mobile and TV AND Mobile Data 10GB show 1 matching deal", function() {
         var filters = {
             types: ["Broadband", "Mobile", "TV"],
             data : 2
@@ -99,6 +99,16 @@ describe("Deals module", function() {
         var deals = dealsModule.getFilteredData(filters);
 
         expect(deals.length).toBe(1);
+    });
+
+    it("When filtering by Broadband and Speed 100Mb show 0 matching deal", function() {
+        var filters = {
+            types: ["Broadband"],
+            speed : 102400
+        };
+        var deals = dealsModule.getFilteredData(filters);
+
+        expect(deals.length).toBe(0);
     });
 
 });

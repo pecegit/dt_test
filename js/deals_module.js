@@ -43,8 +43,8 @@ var dealsModule = (function () {
             if (filters.speed && el.speed.sortValue != filters.speed)
                 return false;
 
-            // must match mobile data
-            if (filters.data && el.mobile.data.sortValue != filters.data)
+            // must match mobile data (I assume deals with less data than the selected filter are also OK)
+            if (filters.data && el.mobile.data.sortValue < filters.data)
                 return false;
 
             // made it here, must be matching all conditions
