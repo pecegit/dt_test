@@ -16,13 +16,26 @@ td, th {
 #logo {
     height: 72px;
 }
+
+#hamburger {
+    width: 64px;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    display: none;
+    background: url(../images/burgermenu.svg) no-repeat scroll 0 0 transparent;
+    background-position: center;
+}
+
 .inner_content {
     width: auto;
     max-width: 1260px;
     margin: 0 auto;
+    position: relative;
 }
 
-/* main content*/
+/* smart phones*/
 @media only screen and (max-width: 600px) {
     table, thead, tbody, th, td, tr {
         display: block;
@@ -33,7 +46,20 @@ td, th {
         top: -9999px;
         left: -9999px;
     }
+
+    #hamburger {
+        display: inline-block;
+    }
+
+    #filters {
+        position: absolute;
+        top: 0;
+        background-color: #333;
+        color: #cccccc;
+    }
 }
+
+/* main content*/
 #content
 {
     display:table;
@@ -50,6 +76,7 @@ td, th {
 
 #filters {
     width: 200px;
+    padding: 0 0 20px 5px;
 }
 
 #results {
