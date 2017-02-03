@@ -35,7 +35,7 @@ var dealsModule = (function () {
             var matched_types = $.grep(filters.types, function(el) {
                 return productTypes.indexOf(el) != -1 ;
             });
-            // must match all product type filters exclusively
+            // must match all product type filters exclusively - must not include other deals than the selected ones
             if ((matched_types.length != filters.types.length) || (matched_types.length != productTypes.length))
                 return false;
 
@@ -44,7 +44,7 @@ var dealsModule = (function () {
                 return false;
 
             // must match mobile data (I assume deals with less data than the selected filter are also OK)
-            if (filters.data && el.mobile.data.sortValue < filters.data)
+            if (filters.data && el.mobile && el.mobile.data.sortValue < filters.data)
                 return false;
 
             // made it here, must be matching all conditions

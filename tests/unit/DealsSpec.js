@@ -111,4 +111,13 @@ describe("Deals module", function() {
         expect(deals.length).toBe(0);
     });
 
+    it("When filtering by Broadband and Mobile data returns 0", function() {
+        var filters = {
+            types: ["Broadband"],
+            data : "2 GB"
+        };
+        var deals = dealsModule.getFilteredData(filters);
+
+        expect(deals.length).toBe(0);
+    });
 });
