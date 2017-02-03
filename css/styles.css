@@ -43,7 +43,7 @@ td, th {
         text-align: left;
     }
     /* Hide table headers (but not display: none;, for accessibility) */
-    thead tr {
+    #results thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;
@@ -72,6 +72,11 @@ td, th {
     }
 }
 
+@media only screen and (min-width: 601px) {
+    #results tbody td {
+        padding: 10px 0 10px 0;
+    }
+}
 /* main content*/
 #content
 {
@@ -99,3 +104,4 @@ td, th {
 .bg_color {
     background-color: #dedede;
 }
+

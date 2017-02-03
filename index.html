@@ -62,12 +62,24 @@
             {{#each deals}}
             <tr>
                 <td>{{title}}</td>
-                <td>18 months</td>
-                <td>17Mb</td>
-                <td>some image</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>£358</td>
+                <td>{{contractLength}} months</td>
+                <td>{{KBtoMB speed.sortValue}} MB<br>{{usage.label}}</td>
+                <td><img src="{{offer.smallLogo}}" alt="{{offer.title}}" title="{{offer.title}}"> </td>
+                <td>{{#if popularChannels}}
+                        {{#each popularChannels}}<img class="tv_logo" src="{{logo}}" alt="{{offer.title}}" title="{{offer.title}}"><br>{{/each}}
+                    {{else}}
+                        N/A
+                    {{/if}}
+                </td>
+                <td>{{#if mobile}}
+                    Data: {{mobile.data.label}}<br>
+                    Minutes: {{mobile.minutes.label}}<br>
+                    Texts: {{mobile.texts.label}}<br>
+                    Conenction: {{mobile.connectionType.label}}
+                    {{else}}
+                    N/A
+                    {{/if}}</td>
+                <td>&pound;{{#each prices}}{{totalContractCost}}{{/each}}</td>
             </tr>
             {{/each}}
             </tbody>

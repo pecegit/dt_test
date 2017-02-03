@@ -6,6 +6,10 @@ var rendererModule = (function () {
         var source = $("#row-template").html();
         template = Handlebars.compile(source);
         table_el = $("#results table");
+
+        Handlebars.registerHelper('KBtoMB', function(value) {
+            return value/1024;
+        });
     }
 
     function render(data) {
