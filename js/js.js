@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     filtersModule.setup();
+    rendererModule.setup();
     dealsModule.setData(data);
 
     PubSub.sub('filters_changed', render)
@@ -8,8 +9,11 @@ $( document ).ready(function() {
 
     function render(filters)
     {
+        var deals = dealsModule.getFilteredData(filters);
+        rendererModule.render(deals);
         console.log(filters);
-        console.log(dealsModule.getFilteredData(filters));
+        console.log(deals);
+
     }
 });
 

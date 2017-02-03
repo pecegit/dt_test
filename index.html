@@ -8,6 +8,9 @@
     <script src="js/pubsub.min.js"></script>
     <script src="js/deals_module.js"></script>
     <script src="js/filters_module.js"></script>
+    <script src="js/renderer_module.js"></script>
+    <script src="js/handlebars-latest.js"></script>
+
     <script src="js/js.js"></script>
 </head>
 <body>
@@ -49,18 +52,27 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Unlimited Broadband</td>
-                    <td>18 months</td>
-                    <td>17Mb</td>
-                    <td>some image</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>£358</td>
-                </tr>
+
                 </tbody>
             </table>
         </div>
+
+        <script id="row-template" type="text/x-handlebars-template">
+            <tbody>
+            {{#each deals}}
+            <tr>
+                <td>{{title}}</td>
+                <td>18 months</td>
+                <td>17Mb</td>
+                <td>some image</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>£358</td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </script>
+
 </div>
 </body>
 </html>
