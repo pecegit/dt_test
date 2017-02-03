@@ -111,10 +111,20 @@ describe("Deals module", function() {
         expect(deals.length).toBe(0);
     });
 
-    it("When filtering by Broadband and Mobile data returns 0", function() {
+    it("When filtering by Broadband and Mobile data returns 0 matching deal", function() {
         var filters = {
             types: ["Broadband"],
             data : "2 GB"
+        };
+        var deals = dealsModule.getFilteredData(filters);
+
+        expect(deals.length).toBe(0);
+    });
+
+    it("When filtering by Mobile but also for Broadband speed returns 0 matching deal", function() {
+        var filters = {
+            types: ["Mobile"],
+            speed : 53248
         };
         var deals = dealsModule.getFilteredData(filters);
 

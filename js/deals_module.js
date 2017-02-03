@@ -39,9 +39,16 @@ var dealsModule = (function () {
             if ((matched_types.length != filters.types.length) || (matched_types.length != productTypes.length))
                 return false;
 
+            // only show deals with speed if they are looking for broadband
+            if (filters.speed && filters.speed > 0 && filters.types.indexOf("Broadband") == -1)
+                return
             // must match speed
             if (filters.speed && el.speed.sortValue != filters.speed)
                 return false;
+
+            // only show deals with data download if they're looking for mobile
+            if (filters.data && filters.types.indexOf("Mobile") == -1)
+                return
 
             // must match mobile data (I assume deals with less data than the selected filter are also OK)
             if (filters.data && el.mobile && el.mobile.data.sortValue < filters.data)
