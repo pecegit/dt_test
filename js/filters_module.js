@@ -1,3 +1,4 @@
+// TO DO - test this either unit or system test style, probably with jasmine-jquery: inject and mock the jquery objects or load the actual page/DOM
 var filtersModule = (function () {
     var _typeFilterControls,
         _speedFilterControl;

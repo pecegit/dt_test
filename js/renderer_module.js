@@ -1,3 +1,4 @@
+// TO DO - test, unit
 var rendererModule = (function () {
     var template,
         table_el;
